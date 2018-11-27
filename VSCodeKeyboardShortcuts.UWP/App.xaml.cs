@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System.Profile;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -15,7 +21,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace VSCodeKeyboardShortcuts
+namespace VSCodeKeyboardShortcuts.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -30,6 +36,8 @@ namespace VSCodeKeyboardShortcuts
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            AppCenter.Start("55a54a8f-aa83-4f23-86d1-8ea810c9a910", typeof(Analytics));
         }
 
         /// <summary>
@@ -70,6 +78,24 @@ namespace VSCodeKeyboardShortcuts
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+                
+                ExtendAcrylic();
+            }
+        }
+
+        private static void ExtendAcrylic()
+        {
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.XamlCompositionBrushBase") && AnalyticsInfo.VersionInfo.DeviceFamily != "Windows.Mobile")
+            {
+                ApplicationViewTitleBar formattableTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+                formattableTitleBar.ButtonBackgroundColor = Colors.Transparent;
+                formattableTitleBar.BackgroundColor = Colors.Transparent;
+                formattableTitleBar.ButtonForegroundColor = Colors.White;
+                formattableTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+                formattableTitleBar.ButtonHoverBackgroundColor = Color.FromArgb(255, 0, 115, 207);
+
+                CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+                coreTitleBar.ExtendViewIntoTitleBar = true;
             }
         }
 
