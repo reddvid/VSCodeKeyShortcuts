@@ -181,11 +181,15 @@
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Assets\VSCodeKeyShorts.png" />
+    <Content Include="Assets\vscodeks-new.png" />
+    <Content Include="Assets\vscodeks_ren.png" />
     <Content Include="Assets\vscodelogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="vscodeks-new.png" />
+    <Content Include="vscodeks_ren.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

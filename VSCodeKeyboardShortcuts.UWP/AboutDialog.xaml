@@ -20,7 +20,7 @@
                 <Image
                     Height="80"
                     HorizontalAlignment="Center"
-                    Source="/Assets/vscodekeyshorts.png" />
+                    Source="/Assets/vscodeks_ren.png" />
                 <Border Height="24" />
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock
@@ -31,7 +31,7 @@
                         TextAlignment="Center">
                         <Run Text="VS Code" />
                         <LineBreak />
-                        <Run Text="Keyboard Extensions" />
+                        <Run Text="Keyboard Shortcuts" />
                     </TextBlock>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center">

@@ -43,7 +43,7 @@ namespace VSCodeKeyboardShortcuts.UWP
             // Get CTRL+F
             Window.Current.CoreWindow.Dispatcher.AcceleratorKeyActivated += Dispatcher_AcceleratorKeyActivated;
 
-            // GenerateActivityAsync();
+            GenerateActivityAsync();
         }
 
         UserActivitySession _currentActivity;
@@ -55,8 +55,8 @@ namespace VSCodeKeyboardShortcuts.UWP
 
             // Populate required properties
             userActivity.VisualElements.DisplayText = "VS Code Keyboard Shortcuts";
-            userActivity.ActivationUri = new Uri("symboliconfinder://");
-            userActivity.VisualElements.Description = "View and search Segoe MDL2 icons";
+            userActivity.ActivationUri = new Uri("vscodeks://");
+            userActivity.VisualElements.Description = "View keyboard shortcuts";
 
             // Save
             await userActivity.SaveAsync(); //save the new metadata

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="32760RedDavid.VSCodeKeyboardShortcuts" Publisher="CN=3CB88423-4D53-4969-9486-DE9585CE29EF" Version="1.0.3.0" />
+  <Identity Name="32760RedDavid.VSCodeKeyboardShortcuts" Publisher="CN=3CB88423-4D53-4969-9486-DE9585CE29EF" Version="1.0.4.0" />
   <mp:PhoneIdentity PhoneProductId="38e6697b-4ad7-4de1-8ccf-c020d27b635e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>VS Code Keyboard Shortcuts</DisplayName>
@@ -23,8 +23,16 @@
             <uap:ShowOn Tile="wide310x150Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#007ACC" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#015c9a" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="vscodeks">
+            <uap:Logo>vscodeks_ren.png</uap:Logo>
+            <uap:DisplayName>VS Code Keyboard Shortcuts</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

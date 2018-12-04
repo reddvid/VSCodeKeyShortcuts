@@ -38,6 +38,28 @@ namespace VSCodeKeyboardShortcuts.UWP
             this.Suspending += OnSuspending;
 
             AppCenter.Start("55a54a8f-aa83-4f23-86d1-8ea810c9a910", typeof(Analytics));
+
+
+        }
+
+        protected override void OnActivated(IActivatedEventArgs e)
+        {
+            if (e.Kind == ActivationKind.Protocol)
+            {
+                var uriArgs = e as ProtocolActivatedEventArgs;
+                if (uriArgs != null)
+                {
+
+                    // Navigate to the 2nd page of the  app
+                    Frame rootFrame = Window.Current.Content as Frame;
+                    rootFrame = new Frame();
+                    Window.Current.Content = rootFrame;
+                    rootFrame.Navigate(typeof(MainPage), uriArgs.Uri.Host);
+                }
+            }
+
+            Window.Current.Activate();
+            ExtendAcrylic();
         }
 
         /// <summary>
